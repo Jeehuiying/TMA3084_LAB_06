@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 import 'room_list.dart';
 
 class Dashboard extends StatefulWidget {
@@ -10,7 +10,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<Dashboard> {
-
   DateTime? checkInDate;
   DateTime? checkOutDate;
 
@@ -30,8 +29,7 @@ class _DashboardPageState extends State<Dashboard> {
         checkInDate = picked;
 
         // Reset check-out date if it is earlier than check-in date
-        if (checkOutDate != null &&
-            checkOutDate!.isBefore(picked)) {
+        if (checkOutDate != null && checkOutDate!.isBefore(picked)) {
           checkOutDate = null;
         }
       });
@@ -42,9 +40,7 @@ class _DashboardPageState extends State<Dashboard> {
     // Open the date picker dialog when tapped
     DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: checkOutDate ??
-          checkInDate ??
-          DateTime.now(),
+      initialDate: checkOutDate ?? checkInDate ?? DateTime.now(),
       firstDate: checkInDate ?? DateTime.now(),
       lastDate: DateTime(2100),
     );
@@ -77,7 +73,6 @@ class _DashboardPageState extends State<Dashboard> {
 
             child: Column(
               children: [
-
                 // Welcome Message
                 Text(
                   "Welcome to HY Hotel!",
@@ -93,10 +88,7 @@ class _DashboardPageState extends State<Dashboard> {
                 const Text(
                   "Enjoy a relaxing seaside escape with beautiful ocean views, tropical vibes, and a peaceful beach atmosphere.",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                  ),
+                  style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
 
                 const SizedBox(height: 20),
@@ -115,7 +107,6 @@ class _DashboardPageState extends State<Dashboard> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Text(
                           "About HY Hotel",
                           style: TextStyle(
@@ -130,10 +121,7 @@ class _DashboardPageState extends State<Dashboard> {
                         const Text(
                           "HY Hotel offers a comfortable and relaxing stay for guests who want to enjoy a peaceful seaside holiday. Guests can experience beautiful ocean views and a pleasant beach atmosphere.",
                           textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
-                          ),
+                          style: TextStyle(fontSize: 14, color: Colors.black),
                         ),
 
                         const SizedBox(height: 15),
@@ -152,39 +140,26 @@ class _DashboardPageState extends State<Dashboard> {
                           spacing: 10,
                           runSpacing: 10,
                           children: [
-
                             Chip(
-                              avatar: const Icon(
-                                Icons.wifi,
-                                size: 18,
-                              ),
+                              avatar: const Icon(Icons.wifi, size: 18),
                               label: const Text("Free Wi-Fi"),
                               backgroundColor: Colors.pink[50],
                             ),
 
                             Chip(
-                              avatar: const Icon(
-                                Icons.pool,
-                                size: 18,
-                              ),
+                              avatar: const Icon(Icons.pool, size: 18),
                               label: const Text("Swimming Pool"),
                               backgroundColor: Colors.pink[50],
                             ),
 
                             Chip(
-                              avatar: const Icon(
-                                Icons.beach_access,
-                                size: 18,
-                              ),
+                              avatar: const Icon(Icons.beach_access, size: 18),
                               label: const Text("Beach View"),
                               backgroundColor: Colors.pink[50],
                             ),
 
                             Chip(
-                              avatar: const Icon(
-                                Icons.restaurant,
-                                size: 18,
-                              ),
+                              avatar: const Icon(Icons.restaurant, size: 18),
                               label: const Text("Restaurant"),
                               backgroundColor: Colors.pink[50],
                             ),
@@ -211,7 +186,6 @@ class _DashboardPageState extends State<Dashboard> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Text(
                           "Hotel Gallery",
                           style: TextStyle(
@@ -265,7 +239,6 @@ class _DashboardPageState extends State<Dashboard> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Text(
                           "Booking Options",
                           style: TextStyle(
@@ -357,9 +330,7 @@ class _DashboardPageState extends State<Dashboard> {
 
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 15,
-                              ),
+                              padding: const EdgeInsets.symmetric(vertical: 15),
                               backgroundColor: Colors.green[700],
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
@@ -376,18 +347,18 @@ class _DashboardPageState extends State<Dashboard> {
 
                             onPressed: () {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text("Reservation Info Saved!")
-                                  ),
+                                const SnackBar(
+                                  content: Text("Reservation Info Saved!"),
+                                ),
                               );
 
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const RoomList(),
-                                  ),
-                                );
-                              }
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const RoomList(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ],

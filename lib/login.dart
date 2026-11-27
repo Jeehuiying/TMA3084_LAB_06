@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'dashboard.dart';
 
 class Login extends StatefulWidget {
@@ -16,11 +17,11 @@ class _LoginPageState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
-        title: const Text("Hotel Booking Application", style: TextStyle(
-            color: Colors.white
-        ),),
+        title: const Text(
+          "Hotel Booking Application",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.green[700],
         centerTitle: true,
       ),
@@ -46,7 +47,9 @@ class _LoginPageState extends State<Login> {
                       const CircleAvatar(
                         radius: 50,
                         backgroundColor: Colors.grey,
-                        backgroundImage: AssetImage('assets/images/hotel_logo.png'),
+                        backgroundImage: AssetImage(
+                          'assets/images/hotel_logo.png',
+                        ),
                       ),
                       const SizedBox(height: 15),
                       Text(
@@ -68,11 +71,13 @@ class _LoginPageState extends State<Login> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
                         validator: (value) =>
-                        value!.isEmpty ? "Enter your email" : null,
+                            value!.isEmpty ? "Enter your email" : null,
                       ),
                       const SizedBox(height: 15),
                       TextFormField(
@@ -86,11 +91,13 @@ class _LoginPageState extends State<Login> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
                         validator: (value) =>
-                        value!.isEmpty ? "Enter password" : null,
+                            value!.isEmpty ? "Enter password" : null,
                       ),
                       const SizedBox(height: 25),
                       SizedBox(
@@ -100,14 +107,16 @@ class _LoginPageState extends State<Login> {
                             padding: const EdgeInsets.symmetric(vertical: 15),
                             backgroundColor: Colors.green[700],
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Dashboard()),
+                                  builder: (context) => const Dashboard(),
+                                ),
                               );
                             }
                           },

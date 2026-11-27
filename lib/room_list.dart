@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class RoomItem {
@@ -27,7 +26,6 @@ class RoomList extends StatefulWidget {
 }
 
 class _RoomListPageState extends State<RoomList> {
-
   double price = 0;
 
   Map<String, bool> extras = {
@@ -86,7 +84,6 @@ class _RoomListPageState extends State<RoomList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 // Room Preferences
                 Card(
                   color: Colors.white,
@@ -101,7 +98,6 @@ class _RoomListPageState extends State<RoomList> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Text(
                           "Room Preferences",
                           style: TextStyle(
@@ -116,9 +112,7 @@ class _RoomListPageState extends State<RoomList> {
                         // Price Preference
                         Text(
                           "Price Preference: RM${price.toInt()}",
-                          style: TextStyle(
-                            color: Colors.green[700],
-                          ),
+                          style: TextStyle(color: Colors.green[700]),
                         ),
 
                         Slider(
@@ -172,24 +166,22 @@ class _RoomListPageState extends State<RoomList> {
                         ),
 
                         Column(
-                          children: [
-                            'City View',
-                            'Sea View',
-                            'No Preference'
-                          ].map((view) {
-                            return RadioListTile<String>(
-                              title: Text(view),
-                              activeColor: Colors.pink[200],
-                              value: view,
-                              groupValue: roomView,
-                              contentPadding: EdgeInsets.zero,
-                              onChanged: (val) {
-                                setState(() {
-                                  roomView = val!;
-                                });
-                              },
-                            );
-                          }).toList(),
+                          children: ['City View', 'Sea View', 'No Preference']
+                              .map((view) {
+                                return RadioListTile<String>(
+                                  title: Text(view),
+                                  activeColor: Colors.pink[200],
+                                  value: view,
+                                  groupValue: roomView,
+                                  contentPadding: EdgeInsets.zero,
+                                  onChanged: (val) {
+                                    setState(() {
+                                      roomView = val!;
+                                    });
+                                  },
+                                );
+                              })
+                              .toList(),
                         ),
                       ],
                     ),
@@ -212,7 +204,6 @@ class _RoomListPageState extends State<RoomList> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Text(
                           "Available Room Types",
                           style: TextStyle(
@@ -231,9 +222,7 @@ class _RoomListPageState extends State<RoomList> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             elevation: 3,
-                            margin: const EdgeInsets.symmetric(
-                              vertical: 8,
-                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 8),
 
                             child: ExpansionTile(
                               initiallyExpanded: room.isExpanded,
@@ -263,10 +252,8 @@ class _RoomListPageState extends State<RoomList> {
                               ),
 
                               subtitle: Column(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-
                                   Text(
                                     room.details,
                                     maxLines: 1,
@@ -292,9 +279,8 @@ class _RoomListPageState extends State<RoomList> {
 
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
-
                                       Text(
                                         "Bed Information: ${room.bedInfo}",
                                         style: TextStyle(
@@ -323,16 +309,11 @@ class _RoomListPageState extends State<RoomList> {
                                         width: double.infinity,
 
                                         child: ElevatedButton(
-                                          style:
-                                          ElevatedButton.styleFrom(
-                                            backgroundColor:
-                                            Colors.pink[50],
-                                            shape:
-                                            RoundedRectangleBorder(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.pink[50],
+                                            shape: RoundedRectangleBorder(
                                               borderRadius:
-                                              BorderRadius.circular(
-                                                10,
-                                              ),
+                                                  BorderRadius.circular(10),
                                             ),
                                           ),
 

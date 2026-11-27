@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'login.dart';
 
 class SignUp extends StatefulWidget {
@@ -13,16 +14,17 @@ class _SignUpPageState extends State<SignUp> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmpasswordController = TextEditingController();
+  final TextEditingController confirmpasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
-        title: const Text("Hotel Booking Application", style: TextStyle(
-            color: Colors.white
-        ),),
+        title: const Text(
+          "Hotel Booking Application",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.green[700],
         centerTitle: true,
       ),
@@ -48,7 +50,9 @@ class _SignUpPageState extends State<SignUp> {
                       const CircleAvatar(
                         radius: 50,
                         backgroundColor: Colors.grey,
-                          backgroundImage: AssetImage('assets/images/hotel_logo.png'),
+                        backgroundImage: AssetImage(
+                          'assets/images/hotel_logo.png',
+                        ),
                       ),
 
                       const SizedBox(height: 15),
@@ -71,11 +75,13 @@ class _SignUpPageState extends State<SignUp> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
                         validator: (value) =>
-                        value!.isEmpty ? "Enter your full name" : null,
+                            value!.isEmpty ? "Enter your full name" : null,
                       ),
                       const SizedBox(height: 15),
                       TextFormField(
@@ -88,11 +94,13 @@ class _SignUpPageState extends State<SignUp> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
                         validator: (value) =>
-                        value!.isEmpty ? "Enter your email" : null,
+                            value!.isEmpty ? "Enter your email" : null,
                       ),
                       const SizedBox(height: 15),
                       TextFormField(
@@ -106,11 +114,13 @@ class _SignUpPageState extends State<SignUp> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
                         validator: (value) =>
-                        value!.isEmpty ? "Enter password" : null,
+                            value!.isEmpty ? "Enter password" : null,
                       ),
                       const SizedBox(height: 15),
                       TextFormField(
@@ -124,7 +134,9 @@ class _SignUpPageState extends State<SignUp> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: const BorderSide(color: Color(0xFF0D47A1)),
+                            borderSide: const BorderSide(
+                              color: Color(0xFF0D47A1),
+                            ),
                           ),
                         ),
 
@@ -135,7 +147,7 @@ class _SignUpPageState extends State<SignUp> {
                             return "Passwords do not match";
                           }
                           return null;
-                        }
+                        },
                       ),
                       const SizedBox(height: 25),
                       SizedBox(
@@ -145,14 +157,16 @@ class _SignUpPageState extends State<SignUp> {
                             padding: const EdgeInsets.symmetric(vertical: 15),
                             backgroundColor: Colors.green[700],
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Login()),
+                                  builder: (context) => const Login(),
+                                ),
                               );
                             }
                           },
@@ -168,7 +182,8 @@ class _SignUpPageState extends State<SignUp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Login()),
+                              builder: (context) => const Login(),
+                            ),
                           );
                         },
                         child: Text(
