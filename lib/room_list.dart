@@ -44,7 +44,6 @@ class _RoomListPageState extends State<RoomList> {
       roomPrice: 380,
       image: const AssetImage('assets/images/king_room.jpg'),
     ),
-
     RoomItem(
       name: "Double Bed Room",
       details: "Two beds, city view, balcony, swimming pool",
@@ -52,7 +51,6 @@ class _RoomListPageState extends State<RoomList> {
       roomPrice: 300,
       image: const AssetImage('assets/images/double_bed.jpg'),
     ),
-
     RoomItem(
       name: "Family Room",
       details: "Two bedrooms, living room, kitchen, Wi-Fi",
@@ -76,7 +74,6 @@ class _RoomListPageState extends State<RoomList> {
 
       body: Container(
         color: Colors.pink[200],
-
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -165,23 +162,25 @@ class _RoomListPageState extends State<RoomList> {
                           ),
                         ),
 
-                        Column(
-                          children: ['City View', 'Sea View', 'No Preference']
-                              .map((view) {
-                                return RadioListTile<String>(
-                                  title: Text(view),
-                                  activeColor: Colors.pink[200],
-                                  value: view,
-                                  groupValue: roomView,
-                                  contentPadding: EdgeInsets.zero,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      roomView = val!;
-                                    });
-                                  },
-                                );
-                              })
-                              .toList(),
+                        RadioGroup<String>(
+                          groupValue: roomView,
+                          onChanged: (value) {
+                            setState(() {
+                              roomView = value!;
+                            });
+                          },
+                          child: Column(
+                            children: ['City View', 'Sea View', 'No Preference']
+                                .map((view) {
+                                  return RadioListTile<String>(
+                                    title: Text(view),
+                                    activeColor: Colors.pink[200],
+                                    value: view,
+                                    contentPadding: EdgeInsets.zero,
+                                  );
+                                })
+                                .toList(),
+                          ),
                         ),
                       ],
                     ),
@@ -343,7 +342,7 @@ class _RoomListPageState extends State<RoomList> {
                               ],
                             ),
                           );
-                        }).toList(),
+                        }),
                       ],
                     ),
                   ),

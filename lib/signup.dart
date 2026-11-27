@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUp> {
                 borderRadius: BorderRadius.circular(25),
               ),
               elevation: 10,
-              color: Colors.white.withOpacity(0.95),
+              color: Colors.white.withValues(alpha: 0.95),
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Form(
